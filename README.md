@@ -43,6 +43,20 @@ python SRTing-python-open.py
 ```
 
 You **must** have:
+
+- `ffmpeg` accessible in PATH (`ffmpeg -version` should work),  
+  **or** copy `ffmpeg.exe` into `assets/`
+
+You **do NOT need** to manually place `multilingual.tiktoken` anywhere if you've installed `whisper_timestamped` via `pip`.  
+It comes bundled inside the package and will work out of the box.
+
+The only time you need to worry about `WHISPER_ASSETS` or missing files is if you're freezing the app into an `.exe`.
+```bash
+python SRTing-python-open.py
+```
+
+You **must** have:
+
 - `ffmpeg` accessible in PATH (`ffmpeg -version` should work),  
   **or** copy `ffmpeg.exe` into `assets/`
 - `multilingual.tiktoken` file inside:  
@@ -78,6 +92,10 @@ pyinstaller --onefile --windowed --icon=assets/sygnetlogostrlogo1.png \
 --add-data "assets/sygnetlogostrlogo1.png;assets" \
 --add-data "assets/dcblackicon.png;assets" \
 --add-data "whisper;whisper" SRTing-python-open.py
+```
+Or just run this simplified version if your structure matches:
+```bash
+pyinstaller texttopremiere.py --noconsole --onefile --add-data "assets;assets" --add-data "whisper/assets;whisper/assets"
 ```
 
 > ⚠️ If `ffmpeg.exe` or `multilingual.tiktoken` are missing when building – your `.exe` will break
