@@ -9,7 +9,8 @@
 
 ## 💡 About
 **SRTing** is a local, offline subtitle generator using OpenAI Whisper with word-level timing.  
-Built for use in **Premiere Pro**, but works anywhere `.srt` is accepted.
+Built for use in **Premiere Pro**, but works anywhere `.srt` is accepted.  
+⚠️ Depending on the model and file size, **transcription might take a while** – don't panic.
 
 ## What It Does
 - Select audio/video file (MP3, MP4, WAV, etc.)
@@ -18,6 +19,9 @@ Built for use in **Premiere Pro**, but works anywhere `.srt` is accepted.
 - Generate `.srt` subtitles in a few clicks
 - Fully Premiere Pro compatible
 - Local GUI (Tkinter) – no internet needed
+
+### 🖼️ Example GUI
+![SRTing GUI Example](https://github.com/Eskimek/SRTing-Premiere-Pro/blob/main/assets/guiexample01.png)
 
 ## ⚙️ Requirements
 - Python 3.10+
@@ -39,7 +43,6 @@ python SRTing-python-open.py
 ```
 
 You **must** have:
-
 - `ffmpeg` accessible in PATH (`ffmpeg -version` should work),  
   **or** copy `ffmpeg.exe` into `assets/`
 - `multilingual.tiktoken` file inside:  
@@ -52,8 +55,7 @@ export WHISPER_ASSETS=/your/path/to/whisper/assets
 ```
 
 ## 📦 Building as .exe
-
-To make a standalone `.exe` organize your files like this:
+To make a standalone `.exe`, organize your files like this:
 
 ```
 .
@@ -69,7 +71,6 @@ To make a standalone `.exe` organize your files like this:
 ```
 
 Then build using this command:
-
 ```bash
 pyinstaller --onefile --windowed --icon=assets/sygnetlogostrlogo1.png \
 --add-data "assets/ffmpeg.exe;assets" \
@@ -79,8 +80,7 @@ pyinstaller --onefile --windowed --icon=assets/sygnetlogostrlogo1.png \
 --add-data "whisper;whisper" SRTing-python-open.py
 ```
 
-> ⚠️ If `ffmpeg.exe` or `multilingual.tiktoken` are missing when building – your `.exe` will break.
-
+> ⚠️ If `ffmpeg.exe` or `multilingual.tiktoken` are missing when building – your `.exe` will break
 ## Premiere Pro Ready
 The `.srt` output works straight in Premiere Pro. No formatting, encoding or re-saving needed. Just drag & drop.
 
