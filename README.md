@@ -20,6 +20,22 @@ Built for use in **Premiere Pro**, but works anywhere `.srt` is accepted.
 - Fully Premiere Pro compatible
 - Local GUI (Tkinter) – no internet needed
 
+## 🌍Supported Languages
+- Auto (Detect automatically)
+- Polish
+- English
+- Spanish
+- German
+- French
+- Turkish
+- Arabic
+- Ukrainian
+- Thai
+- Persian (Farsi)
+- Indonesian
+- Vietnamese
+- Hebrew
+
 ### 🖼️ Example GUI
 ![SRTing GUI Example](https://github.com/Eskimek/SRTing-Premiere-Pro/blob/main/assets/guiexample01.png)
 
